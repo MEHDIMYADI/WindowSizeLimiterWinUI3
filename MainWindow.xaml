@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="WindowSizeLimiterWinUI3.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WindowSizeLimiterWinUI3"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="WindowSizeLimiterWinUI3">
+
+    <Window.SystemBackdrop>
+        <MicaBackdrop />
+    </Window.SystemBackdrop>
+
+    <Grid>
+        <ScrollViewer>
+            <StackPanel Spacing="20" Padding="30">
+                <!-- Title -->
+                <TextBlock Text="Window Size Limiter Demo" FontSize="28" FontWeight="Bold"/>
+
+                <!-- Program Description -->
+                <TextBlock TextWrapping="Wrap" FontSize="16">
+                This demo shows how to prevent a WinUI3 window from being resized smaller than a minimum width and height.
+                You can dynamically change the minimum width, height, and enable or disable the restriction.
+                The Window Size Limiter helper class hooks into Windows messages (WM_GETMINMAXINFO) to enforce the limit.
+                </TextBlock>
+
+                <!-- Settings Panel -->
+                <Border Background="{ThemeResource SystemControlAcrylicWindowBrush}" CornerRadius="8" Padding="20" >
+                    <StackPanel Spacing="12">
+                        <TextBlock Text="Settings" FontSize="20" FontWeight="SemiBold"/>
+
+                        <CheckBox x:Name="WindowLimit" Content="Enable Window Limit" Checked="WindowLimit_Changed" Unchecked="WindowLimit_Changed" />
+
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <TextBlock Text="Min Width:" VerticalAlignment="Center" MinWidth="80"/>
+                            <TextBox x:Name="MinWidthBox" Width="80"/>
+                            <TextBlock Text="px" VerticalAlignment="Center"/>
+                            <Button x:Name="ApplyMinWidthBox" Content="Apply" Click="ApplyMinWidth_Click"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <TextBlock Text="Min Height:" VerticalAlignment="Center" MinWidth="80"/>
+                            <TextBox x:Name="MinHeightBox" Width="80"/>
+                            <TextBlock Text="px" VerticalAlignment="Center"/>
+                            <Button x:Name="ApplyMinHeightBox" Content="Apply" Click="ApplyMinHeight_Click"/>
+                        </StackPanel>
+
+                        <CheckBox x:Name="EnableMaxCheck" Content="Enable Max Limits" Checked="EnableMaxCheck_Changed" Unchecked="EnableMaxCheck_Changed"/>
+
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <TextBlock Text="Max Width:" VerticalAlignment="Center" MinWidth="80"/>
+                            <TextBox x:Name="MaxWidthBox" Width="80"/>
+                            <TextBlock Text="px" VerticalAlignment="Center"/>
+                            <Button x:Name="ApplyMaxWidthBox" Content="Apply" Click="ApplyMaxWidth_Click"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <TextBlock Text="Max Height:" VerticalAlignment="Center" MinWidth="80"/>
+                            <TextBox x:Name="MaxHeightBox" Width="80"/>
+                            <TextBlock Text="px" VerticalAlignment="Center"/>
+                            <Button x:Name="ApplyMaxHeightBox" Content="Apply" Click="ApplyMaxHeight_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <!-- GitHub Info -->
+                <Border Background="{ThemeResource SystemControlAcrylicWindowBrush}" CornerRadius="8" Padding="20">
+                    <StackPanel Spacing="10">
+                        <TextBlock Text="GitHub Repository" FontSize="18" FontWeight="SemiBold"/>
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+                        You can find the full source code and the WindowResizer helper on GitHub:
+                        </TextBlock>
+                        <HyperlinkButton 
+                            Content="https://github.com/MEHDIMYADI"
+                            NavigateUri="https://github.com/MEHDIMYADI"
+                            Click="GitHub_Click"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
