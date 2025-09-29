@@ -3,7 +3,7 @@
 A complete Window Size management implementation for WinUI 3 applications. Since WinUI 3 doesn’t natively support minimum or maximum window size, this library provides a fully DPI-aware, configurable solution.
 
 ## 🎥 Please wait, the animation (GIF) will appear shortly
-![WindowSizeWinUI3](https://github.com/user-attachments/assets/c08c91f5-c8fe-4ab2-8667-77dc6b50f3a8)
+![WindowSizeLimiter](https://github.com/user-attachments/assets/a369870c-de55-436b-85a6-29ec1a7be8a6)
 
 ## ⚠️ Important Note
 
